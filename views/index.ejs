@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <title>Pro Lizingas</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" href="/img/favicon.ico" />
+  <title>Automobilis</title>
+</head>
+<body>
+
+    <%- include('partials/header') %>
+
+  <main class="main-page">
+    <div class="banner">
+      <div class="banner__wrapper">
+          <div class="banner__text">
+              <p>Lėk į pasimatymą jau šiandieną su savo svajonių automobiliu!</p>
+          </div>
+          <div class="banner__image">
+              <img class="banner__image--element" src="/img/car-photo.png" alt="">
+          </div>
+      </div>
+    </div>
+    
+    <div class="filtering">
+        <div class="car-number">
+            <div class="car-number__wrapper">
+                <%=Object.values(auto).length%>
+                <p>Automobilių</p>
+            </div>
+          </div>
+        <div class="filter-submit filter-submit--mobile">
+            <button class="filter-submit__button js-more-filters">Visi filtrai</button>
+          </div>
+      <div class="filtering__container js-filter-window">
+        <div class="filtering__close-button">
+            <button class="filtering__close-button--element js-close-more-filters"></button>
+        </div>
+        <div class="filtering__make">
+          <label for="make">Markė</label>
+          <div class="filtering__make--selector">
+            <form action="/" method="get">
+            <select class="js-filter-select js-make-select" name="make" id="make">
+              <option value="empty">--</option>
+              <% carMakeFilter.forEach(function(item){ %>
+                <option class="make-option" value="<%=item%>"> <%=item%> </option>
+                <%});%>
+
+          </select>
+        </div>
+        </div>
+        <div class="filtering__model">
+            <label for="model">Modelis</label>
+            <div class="filtering__model--selector">
+              <select class="js-filter-select js-model-select" name="model" id="model">
+                <option value="empty">--</option>
+                <% carModelFilter.forEach(function(item){ %>
+                  <option class="model-option <%= item.carMake %> " id="<%=item.carMake%>"value="<%=item.carModel%>"> <%=item.carModel%> </option>
+                  <%});%>
+            </select>
+          </div>
+        </div>
+        <div class="filtering__priceLimit">
+              <label for="priceLimit">Kaina iki</label>
+              <div class="filtering__priceLimit--selector">
+                <select class="js-filter-select" name="priceLimit" id="priceLimit">
+                  <option value="empty">--</option>
+                  <% for( let index = 500; index < 50000; index+=500 ) { %>
+                     <option value=<%=`${index}`%>><%=`${index}`%></option> 
+                  <% } %>
+
+              </select>
+            </div>
+        </div>
+        <div class="filtering__yearFrom">
+                <label for="yearFrom">Metai nuo</label>
+                <div class="filtering__yearFrom--selector">
+                  <select class="js-filter-select" name="yearFrom" id="yearFrom">
+                    <option value="empty">--</option>
+                    <% year.forEach(function(item){ %>
+                      <option value="<%=item%>"> <%=item%> </option>
+                      <%});%>
+                </select>
+              </div>
+        </div>
+        <div class="filtering__yearTo">
+                  <label for="yearTo">Metai iki</label>
+                  <div class="filtering__yearTo--selector">
+                    <select class="js-filter-select" name="yearTo" id="yearTo">
+                      <option value="empty">--</option>
+                      <% year.forEach(function(item){ %>
+                        <option value="<%=item%>"> <%=item%> </option>
+                        <%});%>
+                  </select>
+                </div>
+        </div>
+        <div class="filtering__bodyType">
+                    <label for="bodyType">Kėbulo tipas</label>
+                    <div class="filtering__bodyType--selector">
+                      <select class="js-filter-select" name="bodyType" id="bodyType">
+                        <option value="empty">--</option>
+                        <option value="Sedanas">Sedanas</option>
+                        <option value="Universalas">Universalas</option>
+                        <option value="Hečbekas">Hečbekas</option>
+                        <option value="Visureigis">Visureigis</option>
+                        <option value="Vienatūris">Vienatūris</option>
+                        <option value="Kupė">Kupė(Coupe)</option>
+                        <option value="Komercinis">Komercinis</option>
+                        <option value="Kabrioletas">Kabrioletas</option>
+                        <option value="Keleiviniai">Keleiviniai</option>
+                        <option value="Kita">Kita</option>
+                    </select>
+                  </div>
+        </div>
+        <div class="filtering__fuelType">
+                      <label for="fuelType">Kuro Tipas</label>
+                      <div class="filtering__fuelType--selector">
+                        <select class="js-filter-select" name="fuelType" id="fuelType">
+                          <option value="empty">--</option>
+                          <option value="Dyzelinas">Dyzelinas</option>
+                          <option value="Benzinas">Benzinas</option>
+                          <option value="Benzinas/Dujos">Benzinas/Dujos</option>
+                          <option value="Benzinas/Elektra">Benzinas/Elektra</option>
+                          <option value="Elektra">Elektra</option>
+                          <option value="Dyzelinas/Elektra">Dyzelinas/Elektra</option>
+                          <option value="Kita">Kita</option>
+                      </select>
+                    </div>
+        </div>
+        <div class="filtering__city">
+                        <label for="city">Miestas</label>
+                        <div class="filtering__city--selector">
+                          <select class="js-filter-select" name="city" id="city">
+                            <option value="empty">--</option>
+                            <% city.forEach(function(item){ %>
+                              <option value="<%=item%>"> <%=item%> </option>
+                              <%});%>
+                        </select>
+                      </div>
+        </div>
+        <div class="filter-submit">
+                        <button type="submit" class="filter-submit__button js-filter-button">Filtruoti</button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="auto-container">
+        <% if (auto.length == 0) { %>
+         <div class="banner-wrapper">
+           <p>Šiuo metu tokio automobilio nėra. Pakeiskite pasirinkimus ir bandykite dar kartą.</p>
+         </div>
+        <% } %> 
+            <% Object.values(auto).forEach(function(part){ %>
+            <a href="/automobiliai/<%=part.id%>" class="link_class">
+            <div class="auto-wrapper">
+              <div class="auto-wrapper-img-wrap">
+                  <img class="auto-wrapper-img" src='<%=part.carImage%>' alt="">
+              </div>
+              <div class="carInfo-wrap bold_class">
+                  <span><%=part.carMake %> <%=part.carModel %> </span>
+                  <span class="js-full-price" data-price=<%= part.carPrice %> ><%=part.carPrice.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')%> €</span>
+              </div>
+              
+              <div class="carInfo-wrap">
+                  <span><%=part.carYear %> m.</span>
+                  <span class="carInfo-imoka bold_class">nuo <span class="js-calc"></span> € į mėn</span>
+              </div>
+                <hr class="line">
+              <span class="carInfo-city"><%=part.city %></span>
+            </div>
+          </a>
+            <%});%>
+
+    </div>
+
+    <!-- <input type="number" name="page"> -->
+  </form>
+    <%- include('partials/callToAction') %>
+    <%- include('partials/footer') %>
+  </main>
+
+<script src="/js/filtering.js"></script>
+<script src="/js/calculation.js"></script>
+</body>
+</html>

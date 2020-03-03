@@ -1,0 +1,21 @@
+.help {
+    background: #56B870;
+}
+.help__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.help__el {
+    color: #fff;
+    padding: 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+@media screen and (max-width: 570px) {
+    .help__el {
+        padding: 0.3rem 0;
+    }
+}

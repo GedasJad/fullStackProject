@@ -1,0 +1,84 @@
+.privacy {
+    background-color: #fff;
+    max-width: 650px;
+    max-height: 850px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+        max-height: unset;
+        height: 100vh;
+        max-width: unset;
+        width: 100%;
+
+        &__head {
+            font-size: 0.8rem;
+        }
+        &__text {
+            font-size: 0.6rem;
+        }
+    }
+
+    &__head {
+        background-color: #56B870;
+        color: #fff;
+        padding: 1rem 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__button {
+        width: 32px;
+        height: 32px;
+        opacity: .7;
+        cursor: pointer;
+        background: none;
+        border: none;
+        position: relative;
+    }
+    
+    &__button:hover {
+        opacity: 1;
+    }
+
+    &__button:before {
+        position: absolute;
+        top: 0;
+        content: ' ';
+        height: 33px;
+        width: 2px;
+        background-color: #fff;
+        transform: rotate(45deg);
+    }
+
+    &__button:after {
+        position: absolute;
+        top: 0;
+        content: ' ';
+        height: 33px;
+        width: 2px;
+        background-color: #fff;
+        transform: rotate(-45deg);
+    }
+
+    &__content {
+        margin: 2rem 0;
+        overflow: scroll;
+    }
+
+    &__text {
+        padding: 0 2rem;
+        overflow: scroll;
+
+    }
+
+    &__list {
+
+        li {
+            padding: 0.3rem 0;
+        }
+    }
+}

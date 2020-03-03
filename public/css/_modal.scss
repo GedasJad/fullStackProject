@@ -1,0 +1,43 @@
+.modal {
+    background-color: rgba(0, 0, 0, .4);
+    display: none;
+    height: 100%;
+    left: 0;
+    overflow: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  
+    &__wrapper {
+      display: flex;
+      height: 100%;
+    }
+  
+    &__content {
+      margin: auto;
+    //   pointer-events: none;
+  
+    }
+
+    &__consent {
+        display: none;
+
+        &--visible {
+            display: block !important;
+          }
+    }
+
+    &__privacy {
+        display: none;
+
+        &--visible {
+            display: block !important;
+          }
+    }
+  
+    &--visible {
+      display: block !important;
+    }
+};
+  

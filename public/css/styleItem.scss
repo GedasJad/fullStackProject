@@ -1,0 +1,155 @@
+@import 'navigation';
+@import 'footer';
+@import 'car-info-display';
+@import 'privalumai';
+@import 'kaina';
+@import 'komentarai';
+@import 'forma';
+@import 'call-to-action';
+@import 'partner-car';
+@import 'slider-controls';
+@import 'slider-container';
+@import 'partner-card';
+@import 'slider-item';
+@import 'top-carusel-controls';
+@import 'modal';
+@import 'privacy';
+@import 'back-button';
+
+body {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    min-width: 320px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #343a40;
+    background-color: #fff;
+    height: 100vh;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.line {
+    margin: 2rem auto;
+    border: none;
+    border-radius: 10px;
+    background-color: #56B870;
+    height: 3px;    
+}
+
+.main-page{
+    margin-top: 71px;
+    
+}
+
+@media screen and (max-width: 650px){
+    .main-page {
+        margin-top: 56px;
+    }
+
+}
+
+.number {
+    text-decoration: 0;
+    color: #343a40;
+}
+    
+/****************************************
+auta data
+****************************************/
+
+.auto_data_wrapper{
+    box-sizing: border-box;
+    display: block;
+    min-width: 320px;
+    width: 100%;
+
+}
+
+.auto_pavadininmas{
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+
+.auto_data_row{
+    display: flex;
+    padding: 0.4rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    align-items: center;
+}
+
+.auto_data-key{
+    text-align: left;
+    width: 50%;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1rem;
+    line-height: 1.15
+}
+
+.auto_data-value {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-align: left;
+    width: 50%;
+    color: #707070;
+    line-height: 1rem;
+    line-height: 1.15;
+}
+.auto_data_com-wrap{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    background-color: #F1F3F5;
+}
+.auto_data_com{
+    width: 100%;
+    max-width: 1136px;
+    background-color: #F1F3F5;
+}
+
+.auto_pardavejo_info{
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+}
+
+.auto__pardavejo-contact {
+    display: flex;
+    align-items: center;
+    padding: .5rem 0;
+    text-decoration: underline;
+    color: #343a40;
+}
+
+.visually-hidden {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0 !important;
+	border:0 !important;
+	height: 1px !important; 
+	width: 1px !important; 
+	overflow: hidden;
+}
+
+.green {
+    background: #56B870; /* Old browsers */
+}
+
+.yellow {
+    background: #F3AAAA; /* Old browsers */
+}

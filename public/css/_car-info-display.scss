@@ -1,0 +1,51 @@
+.flex-container {
+    display: flex;
+    max-width: 1236px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.sidebar {
+    display: flex;
+    max-width: 520px;
+}
+.car {
+    display: flex;
+    margin: 0 2.8rem;
+    align-items: center;
+}
+
+.car-wrapper{
+    width: 500px;
+    height: 50%;
+    position: relative;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+.image_wrapper {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 950px){
+    .flex-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        max-width: 1000px;
+    }
+    .car {
+        margin: 0;
+    }
+    .car-wrapper {
+        width: 100vw;
+    }
+    .image_wrapper {
+        object-fit: cover;
+    }
+    .car-wrapper {
+        padding: 0;
+    }
+}

@@ -1,0 +1,11 @@
+.auto_data-text{
+    display: block;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 550px) {
+    .auto_data-text {
+        font-size: 0.7rem;
+    }
+}

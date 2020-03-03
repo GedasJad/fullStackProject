@@ -1,0 +1,33 @@
+.privalumu-wrap {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.privalumai {
+    flex-direction: column;
+    display: flex;
+}
+
+.privalumas {
+    display: flex;
+    align-items: center;
+    margin: .4rem .8rem;
+    font-size: 1rem;
+
+    &__icon{
+        width: 24px;
+        height: 25px;
+        padding: 0 .3rem;
+    }
+}
+
+.color {
+    color: #56B870;
+    margin: 0 0.3rem;
+}
+
+.checkbox {
+    padding: 5px 0;
+}

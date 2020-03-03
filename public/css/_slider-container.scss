@@ -1,0 +1,13 @@
+.slider-container {    
+    max-width: 1236px;
+    padding: 1rem 3rem;
+    margin: 0 1rem;
+    overflow: hidden;
+    border-radius: 5px;    
+    position:relative;
+
+    @media screen and (max-width: 710px) {
+        padding: 0 0 3rem 0;
+        margin: 0;
+    }
+}

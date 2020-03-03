@@ -1,0 +1,23 @@
+.footer {
+    background: #F2F3F5;
+
+    &__container {
+        padding: 0 3rem 0;
+        max-width: 1136px;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    &__text {
+        text-align: justify;
+    }
+}
+
+
+@media screen and (max-width: 650px) {
+    .footer__container {
+        font-size: 0.6rem;
+        padding: 0 1rem 0;
+    }
+}

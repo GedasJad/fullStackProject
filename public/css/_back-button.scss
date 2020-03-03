@@ -1,0 +1,33 @@
+.back-button {
+    width: 100%;
+    max-width: 1163px;
+    margin: auto;
+
+    &__img {
+        fill: #56B870;
+    }
+
+    &__wrapper {
+        padding: 1rem 3rem 0;
+        color:#56B870;
+        display: flex;
+        align-items: center;
+    }
+
+    &__button {
+        border-width: 0;
+        font-size: 1.5rem;
+        color: #56B870;
+        border-radius: 5px;
+        padding: .5rem;
+        background: 0;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+
+    }
+
+    @media screen and (max-width: 950px) {
+        display: none;
+    }
+}

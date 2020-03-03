@@ -1,0 +1,35 @@
+.carInfo-wrap{
+    display: flex;
+    justify-content:space-between;
+    padding: 5px 0;
+    font-size: 18px;
+    color: rgb(52, 58, 64);;
+    align-items: center;
+}
+
+.carInfo-city {
+    font-size: 18px;
+    color: rgb(52, 58, 64);;
+}
+
+.carInfo-imoka {
+    font-size: 25px;
+    color: #2c8443
+}
+
+.line {
+    border: none;
+    border-radius: 10px;
+    background-color:#56B870;
+    height: 3px;
+}
+
+.bold_class {
+    font-weight: 900;
+}
+
+.link_class {
+    cursor: pointer;
+    text-decoration: none;
+    background-color: transparent;
+}

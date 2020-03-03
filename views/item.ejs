@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <title>Pro Lizingas</title>
+  <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/styleItem.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css">
+  <title>Pro Lizingas</title>
+</head>
+<body>
+
+  <%- include('partials/header') %>
+
+  <main class="main-page">
+
+      <%- include('partials/back-button') %>
+
+    <div class="container">
+      <div class="flex-container">
+        <div class="car">
+          <div class="car-wrapper">
+              <ul class="top-controls" id="customized-controls" aria-label="Carousel Navigation" tabindex="0">
+                  <li class="top-controls__arrow prev" data-controls="prev" aria-controls="customize" tabindex="-1">
+                      <svg class="top-controls__arrow-img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167L16.67 24 4.5 12.004z"/></svg>   
+                  </li>
+                  <li class="top-controls__arrow next" data-controls="next" aria-controls="customize" tabindex="-1">
+                      <svg class="top-controls__arrow-img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5 3l3.057-3L20 12 8.057 24 5 21l9-9z"/></svg>     
+                  </li>
+              </ul>
+            <div class="two-slider">
+              <% auto.forEach(function(part){ %>
+            <% part.carImages.forEach(function(ft){%>
+              <img class="image_wrapper" src='<%=ft.url%>' alt="Automobilio Nuotrauka">
+              <%});%>
+            </div>
+        </div>
+        </div>
+
+
+        <div class="auto_data_wrapper sidebar">
+
+          <div class="auto_pavadininmas">
+              <h1><%=part.carMake %> <%=part.carModel%></h1>
+          </div>
+
+          <div class="auto_kaina">
+
+            <div class="mobile-box">
+
+              <span class="price__monthly"><p>nuo <span class="large-monthly js-calc"></span> eur/per mėn</p></span>
+
+              <div class="noriu">
+                <span id="iForma" class="noriu-box">Gauti pasiūlymą!</span>
+                </div>
+
+              </div>
+
+              <div class="privalumu-wrap">
+
+            <div class="privalumai">
+                  <span class="privalumas"><img class="privalumas__icon" src="/img/check-mark.svg" alt="check-box-icon"> Gaukite pasiūlymą per 30 min.</span>
+                  <span class="privalumas"><img class="privalumas__icon" src="/img/check-mark.svg" alt="check-box-icon"> Patikimų partnerių automobiliai</span>
+                </div>
+                <div class="privalumai">
+                  <span class="privalumas"><img class="privalumas__icon" src="/img/check-mark.svg" alt="check-box-icon"> Jokių užslėptų mokesčių</span>
+                  <span class="privalumas"><img class="privalumas__icon" src="/img/check-mark.svg" alt="check-box-icon"> Be pradinio įnašo</span>
+                  </div>
+
+                </div>
+
+                <div class="price__full">
+                  <span class="js-full-price"data-price=<%= part.carPrice %> >Kaina <%=part.carPrice.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')%> EUR</span>
+                  </div>
+
+          </div>
+
+
+          <div class="auto_data_row">
+            <span class="auto_data-key">Miestas</span>
+            <span class="auto_data-value"><%=part.city%></span>
+          </div>
+
+          <div class="auto_data_row">
+            <span class="auto_data-key">Pagaminimo data</span>
+            <span class="auto_data-value"><%=part.carYear%></span>
+          </div>
+
+          <div class="auto_data_row">
+              <span class="auto_data-key">Variklis</span>
+              <span class="auto_data-value"><%=part.carEngine%></span>
+            </div>
+
+          <div class="auto_data_row">
+              <span class="auto_data-key">Kuro tipas</span>
+              <span class="auto_data-value"><%=part.fuelType%></span>
+            </div>
+
+          <div class="auto_data_row">
+              <span class="auto_data-key">Pavarų dežė</span>
+              <span class="auto_data-value"><%=part.gearBox%></span>
+            </div>
+
+          <div class="auto_data_row">
+              <span class="auto_data-key">Kėbulo tipas</span>
+              <span class="auto_data-value"><%=part.bodyType%></span>
+            </div>
+
+          <div class="auto_data_row">
+              <span class="auto_data-key">Išorinė spalva</span>
+              <% if(part.carColor){ %> 
+              <span class="auto_data-value"><%= part.carColor %> </span>
+              <% }else { %> 
+                <span class="auto_data-value">-</span>
+              <%}%>
+            </div>
+
+          <div class="auto_data_row">
+            <span class="auto_data-key">Rida</span>
+            <% if(part.carMiles === 0){ %> 
+              <span class="auto_data-value">-</span>
+              <% }else { %> 
+                <span class="auto_data-value"><%= part.carMiles %></span>
+              <%}%>
+          </div>
+
+            <div class="auto_pardavejo_info">
+                <h4>Techninė informacija</h4>
+              <a href="http://maps.google.com/?q=<%= part.partnerAdress %> " target="_blank" class="auto__pardavejo-contact"><img src="/img/location.svg" alt="location-icon"> <%= part.partnerAdress %></a>
+              <span class="auto__pardavejo-contact"><img src="/img/phone.svg" alt="phone-icon"> <a class="number" href="tel:+37060286751">+37060286751</a></span>
+              <span class="auto__pardavejo-contact"><img src="/img/phone.svg" alt="phone-icon"></i> <a class="number" href="tel:+<%= part.partnerNumber %>"><%= part.partnerNumber %></a></span>
+            </div>
+
+
+          </div>
+      </div>
+
+      <div class="auto_data_com-wrap">
+          <div class="auto_data_com">
+            <span class="auto_data-text"><%=part.carComment%></span>            
+          </div>
+          </div>
+        
+      
+        <hr id="forma" class="line">
+
+        <h2 class="name">Gaukite pasiūlymą</h2>
+
+        <form action="/form" class="form-wrap" method="POST">
+          <%});%>
+          <div class="auto_form-row">
+            <label for="vardas" class="visually-hidden"></label>
+            <input name="name" class="form-el" type="text" id="vardas" placeholder="Vardas" required>
+          </div>
+
+          <div class="auto_form-row">
+              <label for="pavarde" class="visually-hidden"></label>
+            <input name="lastName" class ="form-el" type="text" id="pavarde" placeholder="Pavardė" required>
+          </div>
+
+          <div class="auto_form-row">
+              <label for="asmensKodas" class="visually-hidden"></label>
+            <input name="idNum" class ="form-el" type="number" id="asmensKodas" placeholder="Asmens Kodas" required>
+          </div>
+
+          <div class="auto_form-row">
+            <label for="tel" class="visually-hidden"></label>
+            <input name='mobile' class ="form-el" type="text" value="+370" id="tel" placeholder="Tel. numeris" required>
+            <% Object.values(auto).forEach(function(auto){ %>
+            <input type="hidden" name="autoModel" value="<%= auto.carModel %>">
+            <input type="hidden" name="autoMake" value="<%= auto.carMake %>">
+            <input type="hidden" name="autoPrice" value="<%= auto.carPrice %>">
+            <input type="hidden" name="autoLink" value="<%= auto.id %>">
+            <input type="hidden" name="autoCity" value="<%= auto.city %>">
+            <input type="hidden" name="autoYear" value="<%= auto.carYear %>">
+            <input type="hidden" name="autoFuel" value="<%= auto.fuelType %>">
+            <input type="hidden" name="autoGear" value="<%= auto.gearBox %>">
+            <input type="hidden" name="autoBody" value="<%= auto.bodyType %>">
+            <%});%>
+          </div>
+          <div class="auto_form-row">
+            <label for="email" class="visually-hidden">Email</label>
+            <input name="email" class ="form-el" type="email" id="email" placeholder="El. paštas" required>
+          </div>
+
+
+          <div class="auto_form-row radio">
+            <div class="radio__element">
+              <input type="radio" name="work" value="nedirbu"> <span class="radio__text">Nedirbu</span>
+            </div>
+            <div class="radio__element">
+              <input type="radio" name="work" value="0-1men"> <span class="radio__text">0-1 mėn</span>
+            </div>
+            <div class="radio__element">
+              <input type="radio" name="work" value="2-3men"> <span class="radio__text">2-3 mėn</span>
+            </div>
+            <div class="radio__element">
+              <input type="radio" name="work" value="4men ir daugiau"> <span class="radio__text">4 mėn ir daugiau </span>
+            </div>
+          </div>
+
+
+
+          <div class="checkbox-form">
+            <div class="checkbox-container">
+              <input type="checkbox" name="answer1">
+              <label for="answer1">Sutinku, kad mano asmens duomenys būtų naudojami tiesioginės rinkodaros tikslais. <a class="read js-modal-open" data-modal="consent">Skaityti daugiau</a></label>
+            </div>
+
+            <div class="checkbox-container">
+              <input type="checkbox" name="answer2" required>
+              <label for="answer2">Patvirtinu, kad visi mano pateikti asmens duomenys yra teisingi, aš susipažinau ir sutinku su jų tvarkymo sąlygomis ir UAB "Sotero LT" <a class="read js-modal-open" data-modal="privacy">privatumo politika</a></label>
+              </div>
+          </div>
+
+          <div class="btn">
+            <button class="button" type="submit">Pateikti paraišką</button>
+          </div>
+
+
+        </form>
+
+        <div class="auto_data_com-wrap">
+            <div class="auto_data_com">
+              <h2 class="name">Kiti pardavėjo skelbimai</h2>
+              <div class="slider-container">
+                  <ul class="controls" id="customize-controls" aria-label="Carousel Navigation" tabindex="0">
+                      <li class="controls__arrow prev" data-controls="prev" aria-controls="customize" tabindex="-1">
+                          <img class="controls__arrow-img" src="/img/arrow-left.svg" alt="left-arrow icon">
+                      </li>
+                      <li class="controls__arrow next" data-controls="next" aria-controls="customize" tabindex="-1">
+                          <img class="controls__arrow-img" src="/img/arrow-right.svg" alt="right-arrow icon">   
+                      </li>
+                  </ul>
+                  <div class="my-slider">
+                      <% partner.forEach(function(item){ %>
+                        <a href="/automobiliai/<%=item.id%>" class="partner">
+                        <div class="slider-item">
+                            <div class="partner__wrapper">
+                              <div class="partner__wrapper-image">
+                                  <img class="partner__image" src="<%=item.carImages[0]%>" alt="">
+                              </div>
+                                <div class="partner__name">
+                                    <span><%=item.carMake%></span>
+                                    <span><%=item.carModel%></span>
+                                </div>
+                                <div class="partner__price">
+                                    <p class="partner__price--monthly">nuo <span class="partner__price--monthly-price js-calc"></span> eur/per mėn</p>
+                                    <span class="partner__price--full js-full-price" data-price=<%= item.carPrice %> ><%=item.carPrice.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')%> EUR</span>
+                                  </div>
+                                <div class="partner__info">
+                                  <div class="partner__row">
+                                    <span class="partner__row--key">Pagaminimo metai</span>
+                                    <span class="partner__row--value"><%=item.carYear%> m.</span>
+                                  </div>
+                                  <div class="partner__row">
+                                      <span class="partner__row--key">Kuro tipas</span>
+                                      <span class="partner__row--value"><%=item.fuelType%></span>
+                                    </div>
+                                    <div class="partner__row">
+                                        <span class="partner__row--key">Miestas</span>
+                                        <span class="partner__row--value"><%=item.city%></span>
+                                      </div>
+                                      <div class="partner__row">
+                                          <span class="partner__row--key">Variklis</span>
+                                          <span class="partner__row--value"><%=item.carEngine%></span>
+                                        </div>
+                                        <div class="partner__row">
+                                            <span class="partner__row--key">Pavarų Dėžė</span>
+                                            <span class="partner__row--value"><%=item.gearBox%></span>
+                                          </div>
+                                </div>
+                              </div>
+                        </div>
+                          </a>
+                        <%});%>
+                          <a href="/" class="partner">
+                            <div class="slider-item">
+                              <div class="partner__wrapper">
+                                  Kiti pardavėjo skelbimai
+                              </div>
+                            </div>
+                          </a>
+                  </div>
+              </div>
+            </div>
+        </div>
+
+    </div>
+    <%- include('partials/callToAction') %>
+    <%- include('partials/footer') %>
+    
+  </main>
+  <%- include('partials/modal') %>
+
+  <script src="/js/back-button.js"></script>
+  <script src="/js/modal.js"></script>
+  <script src="/js/toForm.js"></script>
+  <script src="/js/calculation.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+
+  <script>
+      var slider1 = tns({
+        container: '.my-slider',
+        loop: false,
+        items: 1,
+        nav: false,
+        mouseDrag: true,
+        loop: true,
+        swipeAngle: 50,
+        preventScrollOnTouch: "auto",
+        controlsContainer: "#customize-controls",
+        responsive: {
+          710: {
+            gutter: 20,
+            items: 2,
+          },
+          900: {
+            gutter: 10,
+            items: 3,
+          }
+        }
+      });
+
+      var slider = tns({
+        container: '.two-slider',
+        loop: false,
+        items: 1,
+        nav: false,
+        loop: true,
+        swipeAngle: 50,
+        preventScrollOnTouch: "auto",
+        controlsContainer: "#customized-controls",
+        responsive: {
+          640: {
+            items: 1
+          },
+          900: {
+            items: 1
+          }
+        }
+      });
+    </script>
+</body>
+</html>
+
+

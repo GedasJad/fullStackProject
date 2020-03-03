@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <title>Pro Lizingas</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Pasiūlymo forma</title>
+</head>
+<body>
+        <%- include('partials/header') %>
+        <main class="main-page">
+          <%- include('partials/back-button') %>
+            <div class="response">
+                <div class="response__wrapper">
+                    <div class="response__header">
+                        <h2> Paraiška sėkmingai užildyta !</h2>
+                    </div>
+                    <p>Sveiki, <%= name %> </p>
+                    <p>Dėkojame jog užpildėte paraišką.
+                       Artimiausiu metu su Jumis susisieks mūsų specialistas.
+                    </p>
+                    <p>Gražios dienos.</p>
+                </div>
+              </div>
+        </main>
+
+        <%- include('partials/callToAction') %>
+        <%- include('partials/footer') %>
+
+</body>
+</html>

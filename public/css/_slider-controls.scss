@@ -1,0 +1,41 @@
+.controls {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    left: 0;    
+    width: 100%;    
+    top: 50%;
+    transform: translatey(-50%);
+    display: flex;
+    outline: none;
+    align-items: center;    
+    justify-content: space-between;
+    z-index: 2;
+
+    &__arrow-img {
+        width: auto;
+        height: 48px;
+    }
+
+    @media screen and (max-width: 710px) {
+        top: 95%;
+        justify-content: center;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &__arrow {
+        outline: none;
+
+        @media screen and (max-width: 710px) {
+            padding: 0 1rem;
+        }
+    }
+
+    &__arrow:hover {
+        cursor: pointer;
+    }
+}

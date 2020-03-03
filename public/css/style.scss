@@ -1,0 +1,60 @@
+@import 'carDisplay';
+@import 'mainPage-carWrap';
+@import 'navigation';
+@import 'footer';
+@import 'call-to-action';
+@import 'filtering';
+@import 'car-number';
+@import 'filter-submit';
+@import '404';
+@import 'banner';
+@import 'form-container';
+@import 'back-button';
+
+body {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    min-width: 320px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #343a40;
+    background-color: #fff;
+    height: 100vh;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.main-page{
+    margin-top: 71px;
+    height: 100vh;
+}
+
+@media screen and (max-width: 650px) {
+    .main-page {
+        margin-top: 58px;
+    }
+}
+
+
+.container {
+    height: 35vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.green {
+    background: #56B870; /* Old browsers */
+}
+
+.red {
+    background: #C655BE; /* Old browsers */
+}

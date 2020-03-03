@@ -1,0 +1,14 @@
+.car-number {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: 900;
+        line-height: 10px;
+    }
+}

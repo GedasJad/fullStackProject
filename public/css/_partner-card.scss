@@ -1,0 +1,90 @@
+.partner{
+    cursor: pointer;
+    text-decoration: none;
+    background-color: transparent;
+    color: unset;
+    width: 100%;
+    height: 100%;
+
+    &__wrapper {
+    text-align: center;    
+    margin: 0 auto;
+    background: #FFF;
+    max-width: 390px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    border: solid 2px #56B870;
+    }
+    &__wrapper-image{
+        height: 238px;
+    }
+
+    &__image {
+        display: inherit;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__name {
+        background-color: #56B870;
+        font-size: 1.3rem;
+        color: #FFF;
+        font-weight: 700;
+        padding: .5rem 0;
+
+    }
+
+    &__price {
+        display: flex;
+        flex-direction: column;
+
+        &--monthly {
+            margin: 0;
+            font-weight: 700;
+            background-color: #F1F3F5;
+            padding: .5rem 0;
+            color: #56B870
+        }
+
+        &--monthly-price {
+            font-size: 1.3rem;
+        }
+
+        &--full {
+            font-weight: 600;
+            background-color: #56B870;
+            padding: .5rem 0;
+            color: #FFF;
+        }
+    }
+
+    &__info {
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin: 0 1rem 1rem;
+    }
+
+    &__row {
+        display: flex;
+        font-size: 1rem;
+        font-weight: initial;
+        margin: 0.5rem 0;
+        align-items: center;
+
+        &--key {
+            text-align: left;
+            width: 60%;
+        }
+
+        &--value {
+            text-align: right;
+            width: 73%;
+            font-weight: 700;
+            color: #707070;
+            align-self: center;
+        }
+    }
+
+}
